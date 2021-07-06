@@ -21,6 +21,7 @@
 		79734A722694E8A400685762 /* InstagramCloneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A712694E8A400685762 /* InstagramCloneUITests.m */; };
 		79734A82269502B700685762 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A81269502B700685762 /* LoginViewController.m */; };
 		79734A85269508B700685762 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A84269508B700685762 /* HomeFeedViewController.m */; };
+		79734A88269512E700685762 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A87269512E700685762 /* ComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		79734A81269502B700685762 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		79734A83269508B700685762 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
 		79734A84269508B700685762 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
+		79734A86269512E700685762 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		79734A87269512E700685762 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		983DB6078DDB565C46AE4011 /* Pods-InstagramClone-InstagramCloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone-InstagramCloneUITests.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone-InstagramCloneUITests/Pods-InstagramClone-InstagramCloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A822DAC5C1B6C1935C3CA674 /* Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone-InstagramCloneUITests/Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF6EBA4F1DD2A672DF6046CD /* Pods_InstagramClone_InstagramCloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone_InstagramCloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +171,8 @@
 				79734A81269502B700685762 /* LoginViewController.m */,
 				79734A83269508B700685762 /* HomeFeedViewController.h */,
 				79734A84269508B700685762 /* HomeFeedViewController.m */,
+				79734A86269512E700685762 /* ComposeViewController.h */,
+				79734A87269512E700685762 /* ComposeViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				79734A85269508B700685762 /* HomeFeedViewController.m in Sources */,
 				79734A4C2694E8A200685762 /* AppDelegate.m in Sources */,
 				79734A5D2694E8A300685762 /* main.m in Sources */,
+				79734A88269512E700685762 /* ComposeViewController.m in Sources */,
 				79734A4F2694E8A200685762 /* SceneDelegate.m in Sources */,
 				79734A82269502B700685762 /* LoginViewController.m in Sources */,
 			);
@@ -617,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.InstagramClone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.InstagramClone.Sebas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -636,7 +642,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.InstagramClone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.InstagramClone.Sebas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

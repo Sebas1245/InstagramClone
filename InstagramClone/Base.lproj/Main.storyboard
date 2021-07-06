@@ -57,6 +57,7 @@
                             <constraint firstItem="qsZ-v1-FdF" firstAttribute="trailing" secondItem="0jB-nZ-732" secondAttribute="trailing" id="Rkg-4R-xwk"/>
                             <constraint firstItem="0jB-nZ-732" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="TCT-9Z-VbL"/>
                             <constraint firstItem="qsZ-v1-FdF" firstAttribute="centerY" secondItem="Iss-Lq-Exf" secondAttribute="centerY" id="V4o-F8-Xht"/>
+                            <constraint firstItem="qsZ-v1-FdF" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Iss-Lq-Exf" secondAttribute="trailing" constant="82" id="ah8-Ok-bxF"/>
                             <constraint firstItem="bZQ-7n-wfX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="dhz-UE-Cnz"/>
                             <constraint firstItem="bZQ-7n-wfX" firstAttribute="top" secondItem="ybr-jh-A3J" secondAttribute="bottom" constant="70" id="gWp-gB-uAp"/>
                             <constraint firstItem="ybr-jh-A3J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i6i-TL-MT3"/>
@@ -91,11 +92,84 @@
                                 <action selector="handleLogout:" destination="s7y-WO-cWc" id="RTy-tZ-cO8"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="lDW-i6-aRq">
+                            <connections>
+                                <segue destination="I5w-Q3-BRQ" kind="presentation" modalPresentationStyle="fullScreen" id="Wxi-8o-Po9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T70-KQ-hxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1525" y="-502"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="80t-3d-vOg">
+            <objects>
+                <viewController id="FkT-l2-asa" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kIh-9B-xfC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-xZ-nQx">
+                                <rect key="frame" x="20" y="123" width="158" height="139"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="74y-L3-gOK"/>
+                                    <constraint firstAttribute="height" constant="139" id="M3T-eD-SGw"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="X15-ib-M8I" appends="YES" id="PHM-WX-97I"/>
+                                </connections>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNd-1O-wbW">
+                                <rect key="frame" x="194" y="123" width="200" height="139"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to choose the image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXY-4Q-3nc">
+                                <rect key="frame" x="43.5" y="270" width="111" height="12"/>
+                                <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ueY-8q-Yyj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oNd-1O-wbW" firstAttribute="top" secondItem="0Oa-xZ-nQx" secondAttribute="top" id="8Jq-w3-Xym"/>
+                            <constraint firstItem="ueY-8q-Yyj" firstAttribute="trailing" secondItem="oNd-1O-wbW" secondAttribute="trailing" constant="20" id="LKR-qM-hT1"/>
+                            <constraint firstItem="iXY-4Q-3nc" firstAttribute="centerX" secondItem="0Oa-xZ-nQx" secondAttribute="centerX" id="MlG-ZT-ywN"/>
+                            <constraint firstItem="oNd-1O-wbW" firstAttribute="bottom" secondItem="0Oa-xZ-nQx" secondAttribute="bottom" id="Pf3-fj-ajp"/>
+                            <constraint firstItem="iXY-4Q-3nc" firstAttribute="top" secondItem="0Oa-xZ-nQx" secondAttribute="bottom" constant="8" id="QZP-3d-So2"/>
+                            <constraint firstItem="oNd-1O-wbW" firstAttribute="leading" secondItem="0Oa-xZ-nQx" secondAttribute="trailing" constant="16" id="Sic-Xb-l9a"/>
+                            <constraint firstItem="0Oa-xZ-nQx" firstAttribute="top" secondItem="ueY-8q-Yyj" secondAttribute="top" constant="35" id="XBJ-hD-1Nj"/>
+                            <constraint firstItem="0Oa-xZ-nQx" firstAttribute="leading" secondItem="ueY-8q-Yyj" secondAttribute="leading" constant="20" id="mcg-Wq-q9u"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DWb-C2-tZM">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="0fl-Nx-Uwp">
+                            <connections>
+                                <action selector="cancelCompose:" destination="FkT-l2-asa" id="bbl-6Z-Jip"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="eXR-qX-Tff"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="0Oa-xZ-nQx" id="Xr8-Il-9a7"/>
+                        <outlet property="textView" destination="oNd-1O-wbW" id="h0F-d5-wDE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJL-6v-ugn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="X15-ib-M8I">
+                    <connections>
+                        <action selector="tappedOnImage:" destination="FkT-l2-asa" id="rZf-zX-Mea"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3742.0289855072465" y="-502.23214285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Hs-4M-5NV">
@@ -115,8 +189,31 @@
             </objects>
             <point key="canvasLocation" x="429" y="-502"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CyF-Vl-wur">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I5w-Q3-BRQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eKq-yb-2sR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FkT-l2-asa" kind="relationship" relationship="rootViewController" id="lzs-bH-rhO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Qt-6L-8AT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2761" y="-502"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="image_placeholder" width="375" height="375"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
