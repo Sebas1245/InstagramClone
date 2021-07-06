@@ -155,7 +155,11 @@
                                 <action selector="cancelCompose:" destination="FkT-l2-asa" id="bbl-6Z-Jip"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="eXR-qX-Tff"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="eXR-qX-Tff">
+                            <connections>
+                                <action selector="shareImage:" destination="FkT-l2-asa" id="I0o-T2-tyN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="0Oa-xZ-nQx" id="Xr8-Il-9a7"/>

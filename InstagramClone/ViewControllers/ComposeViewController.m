@@ -6,6 +6,7 @@
 //
 
 #import "ComposeViewController.h"
+#include "Post.h"
 
 @interface ComposeViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -86,6 +87,42 @@
 - (IBAction)cancelCompose:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
+
+- (IBAction)shareImage:(id)sender {
+    if(![self.textView.text isEqualToString:@""]) {
+        CGSize size = CGSizeMake(300, 300);
+        UIImage *uploadImage = [self resizeImage:self.imageView.image withSize:size];
+        [Post postUserImage:uploadImage withCaption:self.textView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            if(succeeded) {
+                // show home timeline again and reload table data
+                NSLog(@"Image uploaded succesfully!");
+            }
+            else {
+                // alert the error
+                NSLog(@"Error uploading image");
+            }
+        }];
+    }
+    else {
+        // throw an alert
+        NSLog(@"Caption cannot be empty");
+    }
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 /*
 #pragma mark - Navigation
 

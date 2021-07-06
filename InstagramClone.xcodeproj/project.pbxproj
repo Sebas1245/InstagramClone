@@ -22,6 +22,7 @@
 		79734A82269502B700685762 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A81269502B700685762 /* LoginViewController.m */; };
 		79734A85269508B700685762 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A84269508B700685762 /* HomeFeedViewController.m */; };
 		79734A88269512E700685762 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A87269512E700685762 /* ComposeViewController.m */; };
+		79734A8C26951FEA00685762 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A8B26951FEA00685762 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		79734A84269508B700685762 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
 		79734A86269512E700685762 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		79734A87269512E700685762 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		79734A8A26951FEA00685762 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		79734A8B26951FEA00685762 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		983DB6078DDB565C46AE4011 /* Pods-InstagramClone-InstagramCloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone-InstagramCloneUITests.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone-InstagramCloneUITests/Pods-InstagramClone-InstagramCloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A822DAC5C1B6C1935C3CA674 /* Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone-InstagramCloneUITests/Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF6EBA4F1DD2A672DF6046CD /* Pods_InstagramClone_InstagramCloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone_InstagramCloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +133,7 @@
 		79734A492694E8A200685762 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				79734A8926951F9C00685762 /* Models */,
 				79734A7F269502A200685762 /* ViewControllers */,
 				79734A4A2694E8A200685762 /* AppDelegate.h */,
 				79734A4B2694E8A200685762 /* AppDelegate.m */,
@@ -175,6 +179,15 @@
 				79734A87269512E700685762 /* ComposeViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		79734A8926951F9C00685762 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				79734A8A26951FEA00685762 /* Post.h */,
+				79734A8B26951FEA00685762 /* Post.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		86AED21BAD5FF80DDA17E406 /* Pods */ = {
@@ -444,6 +457,7 @@
 				79734A88269512E700685762 /* ComposeViewController.m in Sources */,
 				79734A4F2694E8A200685762 /* SceneDelegate.m in Sources */,
 				79734A82269502B700685762 /* LoginViewController.m in Sources */,
+				79734A8C26951FEA00685762 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
