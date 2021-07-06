@@ -36,7 +36,6 @@
     }];
 }
 - (IBAction)handleSignup:(id)sender {
-    NSLog(@"Handle signup");
     // initialize a user object
     PFUser *newUser = [PFUser user];
     

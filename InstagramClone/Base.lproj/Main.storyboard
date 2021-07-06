@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,14 +78,20 @@
         <!--Home Feed-->
         <scene sceneID="zyQ-rM-sev">
             <objects>
-                <viewController id="s7y-WO-cWc" sceneMemberID="viewController">
+                <viewController id="s7y-WO-cWc" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IxX-tB-1ak">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="d5D-Eg-5YL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home Feed" id="gnT-Nw-Azx"/>
+                    <navigationItem key="navigationItem" title="Home Feed" id="gnT-Nw-Azx">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="GEy-EI-fqy">
+                            <connections>
+                                <action selector="handleLogout:" destination="s7y-WO-cWc" id="RTy-tZ-cO8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T70-KQ-hxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,7 +100,7 @@
         <!--Navigation Controller-->
         <scene sceneID="4Hs-4M-5NV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t2b-uj-ZDd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeFeedViewController" automaticallyAdjustsScrollViewInsets="NO" id="t2b-uj-ZDd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="StA-xR-eno">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
