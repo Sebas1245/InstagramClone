@@ -6,6 +6,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <Parse/Parse.h>
 
 @interface InstagramCloneTests : XCTestCase
 
