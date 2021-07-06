@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		79734A5D2694E8A300685762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A5C2694E8A300685762 /* main.m */; };
 		79734A672694E8A400685762 /* InstagramCloneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A662694E8A400685762 /* InstagramCloneTests.m */; };
 		79734A722694E8A400685762 /* InstagramCloneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A712694E8A400685762 /* InstagramCloneUITests.m */; };
+		79734A82269502B700685762 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79734A81269502B700685762 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		79734A6D2694E8A400685762 /* InstagramCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79734A712694E8A400685762 /* InstagramCloneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramCloneUITests.m; sourceTree = "<group>"; };
 		79734A732694E8A400685762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79734A80269502B700685762 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		79734A81269502B700685762 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		983DB6078DDB565C46AE4011 /* Pods-InstagramClone-InstagramCloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone-InstagramCloneUITests.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone-InstagramCloneUITests/Pods-InstagramClone-InstagramCloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A822DAC5C1B6C1935C3CA674 /* Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone-InstagramCloneUITests/Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF6EBA4F1DD2A672DF6046CD /* Pods_InstagramClone_InstagramCloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone_InstagramCloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +124,7 @@
 		79734A492694E8A200685762 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				79734A7F269502A200685762 /* ViewControllers */,
 				79734A4A2694E8A200685762 /* AppDelegate.h */,
 				79734A4B2694E8A200685762 /* AppDelegate.m */,
 				79734A4D2694E8A200685762 /* SceneDelegate.h */,
@@ -154,6 +158,15 @@
 			path = InstagramCloneUITests;
 			sourceTree = "<group>";
 		};
+		79734A7F269502A200685762 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				79734A80269502B700685762 /* LoginViewController.h */,
+				79734A81269502B700685762 /* LoginViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		86AED21BAD5FF80DDA17E406 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +177,6 @@
 				0118461249528E9B9354F1F5 /* Pods-InstagramCloneTests.debug.xcconfig */,
 				1155C572E6C00BE6C2CFA666 /* Pods-InstagramCloneTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -419,6 +431,7 @@
 				79734A4C2694E8A200685762 /* AppDelegate.m in Sources */,
 				79734A5D2694E8A300685762 /* main.m in Sources */,
 				79734A4F2694E8A200685762 /* SceneDelegate.m in Sources */,
+				79734A82269502B700685762 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

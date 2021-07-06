@@ -22,6 +22,8 @@
         configuration.clientKey = @"wINrUnT085lsrqjnzQRz4sidHQVRTFyBLp94Ldz6";
         configuration.server = @"https://parseapi.back4app.com";
     }];
+    
+    [Parse initializeWithConfiguration:config];
     return YES;
 }
 
