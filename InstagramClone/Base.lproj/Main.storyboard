@@ -95,32 +95,42 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="480"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-X0-V6K" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="389"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbZ-Ry-s4v">
+                                                    <rect key="frame" x="20" y="15" width="386" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-X0-V6K" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="40" width="414" height="310.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Vcs-X0-V6K" secondAttribute="height" multiplier="414:389" id="v0R-Xo-ywI"/>
+                                                        <constraint firstAttribute="width" secondItem="Vcs-X0-V6K" secondAttribute="height" multiplier="4:3" id="SkV-lG-MXK"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-PV-0XZ">
-                                                    <rect key="frame" x="20" y="424" width="374" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="This is a caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-PV-0XZ">
+                                                    <rect key="frame" x="20" y="370.5" width="386" height="93.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8gp-PV-0XZ" firstAttribute="top" secondItem="Vcs-X0-V6K" secondAttribute="bottom" constant="35" id="2cz-ny-5lH"/>
-                                                <constraint firstItem="Vcs-X0-V6K" firstAttribute="top" secondItem="AYY-SY-fB9" secondAttribute="top" id="4mH-Ie-Soi"/>
-                                                <constraint firstItem="8gp-PV-0XZ" firstAttribute="leading" secondItem="AYY-SY-fB9" secondAttribute="leading" constant="20" id="6WA-MV-UXF"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vcs-X0-V6K" secondAttribute="trailing" id="9aZ-Td-EKF"/>
-                                                <constraint firstItem="Vcs-X0-V6K" firstAttribute="leading" secondItem="AYY-SY-fB9" secondAttribute="leading" id="AT6-Jo-hCk"/>
-                                                <constraint firstAttribute="bottom" secondItem="8gp-PV-0XZ" secondAttribute="bottom" constant="35" id="ibT-AL-1oB"/>
-                                                <constraint firstAttribute="trailing" secondItem="8gp-PV-0XZ" secondAttribute="trailing" constant="20" id="xpY-7B-CD7"/>
+                                                <constraint firstAttribute="trailing" secondItem="8gp-PV-0XZ" secondAttribute="trailing" constant="8" id="Fne-8B-CSh"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vcs-X0-V6K" secondAttribute="trailing" id="Igg-Dr-gYT"/>
+                                                <constraint firstItem="8gp-PV-0XZ" firstAttribute="leading" secondItem="AYY-SY-fB9" secondAttribute="leading" constant="20" id="LPe-ve-vTw"/>
+                                                <constraint firstItem="FbZ-Ry-s4v" firstAttribute="leading" secondItem="AYY-SY-fB9" secondAttribute="leading" constant="20" id="Syb-87-aFo"/>
+                                                <constraint firstAttribute="bottom" secondItem="8gp-PV-0XZ" secondAttribute="bottom" constant="16" id="TXv-6I-0Va"/>
+                                                <constraint firstItem="Vcs-X0-V6K" firstAttribute="top" secondItem="FbZ-Ry-s4v" secondAttribute="bottom" constant="8" id="kbM-7A-lyh"/>
+                                                <constraint firstAttribute="trailing" secondItem="FbZ-Ry-s4v" secondAttribute="trailing" constant="8" id="khe-0a-vum"/>
+                                                <constraint firstItem="FbZ-Ry-s4v" firstAttribute="top" secondItem="AYY-SY-fB9" secondAttribute="top" constant="15" id="oLb-oj-2dQ"/>
+                                                <constraint firstItem="8gp-PV-0XZ" firstAttribute="top" secondItem="Vcs-X0-V6K" secondAttribute="bottom" constant="20" id="ryM-b7-Q7e"/>
+                                                <constraint firstItem="Vcs-X0-V6K" firstAttribute="leading" secondItem="AYY-SY-fB9" secondAttribute="leading" id="vpS-mI-Aay"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cellCaption" destination="8gp-PV-0XZ" id="5PF-cI-vlW"/>
                                             <outlet property="cellImage" destination="Vcs-X0-V6K" id="2hr-y6-A5B"/>
+                                            <outlet property="cellUsername" destination="FbZ-Ry-s4v" id="2cg-ex-Rhx"/>
                                             <segue destination="9mw-3L-e9g" kind="show" identifier="DetailSegue" id="OAf-Dq-IGY"/>
                                         </connections>
                                     </tableViewCell>
@@ -130,10 +140,10 @@
                         <viewLayoutGuide key="safeArea" id="d5D-Eg-5YL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="1rF-OM-2Cc" secondAttribute="bottom" id="75K-bl-Wdh"/>
-                            <constraint firstAttribute="trailing" secondItem="1rF-OM-2Cc" secondAttribute="trailing" id="fkj-eR-qLG"/>
-                            <constraint firstItem="1rF-OM-2Cc" firstAttribute="leading" secondItem="IxX-tB-1ak" secondAttribute="leading" id="oPC-fG-vfx"/>
-                            <constraint firstItem="1rF-OM-2Cc" firstAttribute="top" secondItem="IxX-tB-1ak" secondAttribute="top" id="rZw-qe-KUd"/>
+                            <constraint firstItem="1rF-OM-2Cc" firstAttribute="leading" secondItem="IxX-tB-1ak" secondAttribute="leading" id="Edi-Cs-Jvv"/>
+                            <constraint firstAttribute="bottom" secondItem="1rF-OM-2Cc" secondAttribute="bottom" id="Xxp-N1-NMH"/>
+                            <constraint firstItem="1rF-OM-2Cc" firstAttribute="top" secondItem="IxX-tB-1ak" secondAttribute="top" id="fuh-Sy-gIC"/>
+                            <constraint firstAttribute="trailing" secondItem="1rF-OM-2Cc" secondAttribute="trailing" id="gtI-Wu-l4V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home Feed" id="gnT-Nw-Azx">
@@ -154,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T70-KQ-hxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813" y="-181"/>
+            <point key="canvasLocation" x="811.59420289855075" y="-181.47321428571428"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="F2U-Xc-iRP">

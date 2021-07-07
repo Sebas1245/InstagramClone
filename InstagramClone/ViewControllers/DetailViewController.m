@@ -25,7 +25,6 @@
     self.detailCaptionLabel.text = self.post[@"caption"];
     self.detailImageView.file = self.post[@"image"];
     [self.detailImageView loadInBackground];
-    NSLog(@"%@", self.post.createdAt);
     NSDate *createdAt = self.post.createdAt;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"EEE, MMM d, h:mm a"];

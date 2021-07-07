@@ -23,6 +23,7 @@
 - (void)setPost:(Post *)post {
     _post = post;
     self.cellCaption.text = post[@"caption"];
+    self.cellUsername.text = post[@"author"][@"username"];
     self.cellImage.file = post[@"image"];
     [self.cellImage loadInBackground];
 }
