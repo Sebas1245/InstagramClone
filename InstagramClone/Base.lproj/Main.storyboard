@@ -95,11 +95,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="480"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-X0-V6K">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="389.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-X0-V6K" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="389"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Vcs-X0-V6K" secondAttribute="height" multiplier="414:389" id="v0R-Xo-ywI"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-PV-0XZ">
-                                                    <rect key="frame" x="20" y="424.5" width="374" height="20.5"/>
+                                                    <rect key="frame" x="20" y="424" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -117,7 +120,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cellCaption" destination="8gp-PV-0XZ" id="5PF-cI-vlW"/>
-                                            <outlet property="cellImage" destination="Vcs-X0-V6K" id="V9h-xQ-2cA"/>
+                                            <outlet property="cellImage" destination="Vcs-X0-V6K" id="2hr-y6-A5B"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

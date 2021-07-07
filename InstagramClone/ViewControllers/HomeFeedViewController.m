@@ -12,9 +12,12 @@
 #import "SceneDelegate.h"
 #import "PostCell.h"
 #import <LoremIpsum/LoremIpsum.h>
+#import "Post.h"
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *posts;
+@property (strong,nonatomic)  UIRefreshControl *refreshControl;
 
 @end
 
@@ -25,10 +28,16 @@
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+
+    [self fetchPosts];
+    // begin animation for refresh control
+   [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
+   // place refresh control into table view
+   [self.tableView addSubview:self.refreshControl];
 }
 - (IBAction)handleLogout:(id)sender {
     NSLog(@"Firing logout action");
-//    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
@@ -43,16 +52,32 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.posts.count;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell"];
-    cell.cellCaption.text = LoremIpsum.paragraph;
-    [cell.cellImage setImage:[UIImage imageNamed:@"image_placeholder"]];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    Post *post = self.posts[indexPath.row];
+    cell.post = post;
     return cell;
+}
+
+-(void)fetchPosts {
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post*> *_Nullable posts, NSError * _Nullable error) {
+        if(posts != nil) {
+            self.posts = posts;
+            [self.tableView reloadData];
+        } else {
+            // throw an alert
+            NSLog(@"%@", error.localizedDescription);
+        }
+        [self.refreshControl endRefreshing];
+    }];
 }
 /*
 #pragma mark - Navigation

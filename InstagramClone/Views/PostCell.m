@@ -20,4 +20,11 @@
     // Configure the view for the selected state
 }
 
+- (void)setPost:(Post *)post {
+    _post = post;
+    self.cellCaption.text = post[@"caption"];
+    self.cellImage.file = post[@"image"];
+    [self.cellImage loadInBackground];
+}
+
 @end

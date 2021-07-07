@@ -6,12 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+#import <Parse/PFImageView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PostCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *cellImage;
+@property (weak, nonatomic) IBOutlet PFImageView *cellImage;
 @property (weak, nonatomic) IBOutlet UILabel *cellCaption;
+@property (strong, nonatomic) Post *post;
 
 @end
 
