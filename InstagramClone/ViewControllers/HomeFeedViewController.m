@@ -10,8 +10,11 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
+#import "PostCell.h"
+#import <LoremIpsum/LoremIpsum.h>
 
-@interface HomeFeedViewController ()
+@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -20,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 - (IBAction)handleLogout:(id)sender {
     NSLog(@"Firing logout action");
@@ -37,6 +42,18 @@
     }];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    cell.cellCaption.text = LoremIpsum.paragraph;
+    [cell.cellImage setImage:[UIImage imageNamed:@"image_placeholder"]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
 /*
 #pragma mark - Navigation
 

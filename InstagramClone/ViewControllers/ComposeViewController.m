@@ -47,8 +47,8 @@
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
     if ([textView.text isEqualToString:@"Write a caption"]) {
          textView.text = @"";
          textView.textColor = [UIColor labelColor]; //optional
@@ -56,8 +56,7 @@
     [textView becomeFirstResponder];
 }
 
-- (void)textViewDidEndEditing:(UITextView *)textView
-{
+- (void)textViewDidEndEditing:(UITextView *)textView {
     if ([textView.text isEqualToString:@""]) {
         textView.text = @"Write a caption";
         textView.textColor = [UIColor lightGrayColor]; //optional
@@ -66,7 +65,6 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
@@ -74,8 +72,7 @@
     // Do something with the images (based on your use case)
     if(editedImage) {
         [self.imageView setImage:editedImage];
-    }
-    else {
+    } else {
         [self.imageView setImage:originalImage];
     }
     
@@ -89,21 +86,19 @@
 }
 
 - (IBAction)shareImage:(id)sender {
-    if(![self.textView.text isEqualToString:@""]) {
+    if (![self.textView.text isEqualToString:@""]) {
         CGSize size = CGSizeMake(300, 300);
         UIImage *uploadImage = [self resizeImage:self.imageView.image withSize:size];
         [Post postUserImage:uploadImage withCaption:self.textView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-            if(succeeded) {
+            if (succeeded) {
                 // show home timeline again and reload table data
                 NSLog(@"Image uploaded succesfully!");
-            }
-            else {
+            } else {
                 // alert the error
                 NSLog(@"Error uploading image");
             }
         }];
-    }
-    else {
+    } else {
         // throw an alert
         NSLog(@"Caption cannot be empty");
     }
@@ -122,15 +117,5 @@
     
     return newImage;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
