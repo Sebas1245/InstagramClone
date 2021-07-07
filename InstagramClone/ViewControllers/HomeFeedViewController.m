@@ -11,9 +11,9 @@
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
 #import "PostCell.h"
-#import <LoremIpsum/LoremIpsum.h>
 #import "Post.h"
 #import "ComposeViewController.h"
+#import "DetailViewController.h"
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -92,9 +92,19 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController  *composeController = (ComposeViewController*) navigationController.topViewController;
-    composeController.delegate = self;
+    if ([[segue identifier] isEqualToString:@"DetailSegue"]) {
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *detailPost = self.posts[indexPath.row];
+        DetailViewController *postDetailVC = [segue destinationViewController];
+        postDetailVC.post = detailPost;
+        
+    } else {
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController  *composeController = (ComposeViewController*) navigationController.topViewController;
+        composeController.delegate = self;
+    }
+    
 }
 
 
