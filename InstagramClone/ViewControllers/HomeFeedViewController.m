@@ -13,8 +13,9 @@
 #import "PostCell.h"
 #import <LoremIpsum/LoremIpsum.h>
 #import "Post.h"
+#import "ComposeViewController.h"
 
-@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *posts;
 @property (strong,nonatomic)  UIRefreshControl *refreshControl;
@@ -79,14 +80,23 @@
         [self.refreshControl endRefreshing];
     }];
 }
-/*
+
+-(void)didPost {
+    NSLog(@"Firing didPost!");
+    [self fetchPosts];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UINavigationController *navigationController = [segue destinationViewController];
+    ComposeViewController  *composeController = (ComposeViewController*) navigationController.topViewController;
+    composeController.delegate = self;
 }
-*/
+
+
 
 @end

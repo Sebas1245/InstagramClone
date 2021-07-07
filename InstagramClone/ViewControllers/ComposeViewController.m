@@ -92,7 +92,9 @@
         [Post postUserImage:uploadImage withCaption:self.textView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             if (succeeded) {
                 // show home timeline again and reload table data
+                [self.delegate didPost];
                 NSLog(@"Image uploaded succesfully!");
+                [self dismissViewControllerAnimated:true completion:nil];
             } else {
                 // alert the error
                 NSLog(@"Error uploading image");
