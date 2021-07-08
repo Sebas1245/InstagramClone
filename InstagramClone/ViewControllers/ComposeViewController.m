@@ -7,11 +7,11 @@
 
 #import "ComposeViewController.h"
 #include "Post.h"
+#import "Alert.h"
 
 @interface ComposeViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @end
 
 @implementation ComposeViewController
@@ -23,7 +23,6 @@
     self.textView.delegate = self;
     self.textView.text = @"Write a caption";
     self.textView.textColor = [UIColor lightGrayColor]; //optional
-    
 }
 
 - (IBAction)tappedOnImage:(id)sender {
@@ -39,8 +38,7 @@
     // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
+    } else {
         NSLog(@"Camera 🚫 available so we will use photo library instead");
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
@@ -51,7 +49,7 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     if ([textView.text isEqualToString:@"Write a caption"]) {
          textView.text = @"";
-         textView.textColor = [UIColor labelColor]; //optional
+         textView.textColor = [UIColor labelColor];
     }
     [textView becomeFirstResponder];
 }
@@ -59,7 +57,7 @@
 - (void)textViewDidEndEditing:(UITextView *)textView {
     if ([textView.text isEqualToString:@""]) {
         textView.text = @"Write a caption";
-        textView.textColor = [UIColor lightGrayColor]; //optional
+        textView.textColor = [UIColor lightGrayColor];
     }
     [textView resignFirstResponder];
 }
@@ -70,7 +68,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
-    if(editedImage) {
+    if (editedImage) {
         [self.imageView setImage:editedImage];
     } else {
         [self.imageView setImage:originalImage];
@@ -86,7 +84,7 @@
 }
 
 - (IBAction)shareImage:(id)sender {
-    if (![self.textView.text isEqualToString:@""]) {
+    if (![self.textView.text isEqualToString:@"Write a caption"]) {
         CGSize size = CGSizeMake(300, 300);
         UIImage *uploadImage = [self resizeImage:self.imageView.image withSize:size];
         [Post postUserImage:uploadImage withCaption:self.textView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
@@ -96,13 +94,14 @@
                 NSLog(@"Image uploaded succesfully!");
                 [self dismissViewControllerAnimated:true completion:nil];
             } else {
-                // alert the error
                 NSLog(@"Error uploading image");
+                NSString *errorMsg = @"There was an error uploading the post, please try again.";
+                [[Alert new] showAlertWithMessage:errorMsg viewController:self];
             }
         }];
     } else {
-        // throw an alert
-        NSLog(@"Caption cannot be empty");
+        NSString *errorMsg = @"Caption cannot be empty!";
+        [[Alert new] showAlertWithMessage:errorMsg viewController:self];
     }
 }
 
