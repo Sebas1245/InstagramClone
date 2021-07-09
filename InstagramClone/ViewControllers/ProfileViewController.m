@@ -34,7 +34,7 @@
     layout.minimumInteritemSpacing = 2;
     layout.minimumLineSpacing = 2;
     CGFloat postsPerLine = 3;
-    CGFloat itemWidth = (self.postsCollectionView.frame.size.width - layout.minimumInteritemSpacing * (postsPerLine-1)) / postsPerLine;
+    CGFloat itemWidth = ((self.postsCollectionView.frame.size.width - layout.minimumInteritemSpacing * (postsPerLine-1)) / postsPerLine) - 15;
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
@@ -65,7 +65,6 @@
 -(void)setDataForProfile {
     PFUser *currentUser = [PFUser currentUser];
     self.profileUsernameLabel.text = currentUser.username;
-    NSLog(@"%@", currentUser);
     self.profileImageView.file = currentUser[@"profilePicture"];
     [self.profileImageView loadInBackground];
 }
@@ -75,7 +74,7 @@
     self.profileEditButton.layer.borderColor = [[UIColor labelColor] CGColor];
     self.profileEditButton.layer.cornerRadius = 12;
     self.profileImageView.layer.cornerRadius  = self.profileImageView.frame.size.width/2;
-    
+    self.profileImageView.clipsToBounds = true;
 }
 
 
@@ -105,7 +104,6 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
-    // Do something with the images (based on your use case)
     if (editedImage) {
         [self.profileImageView setImage:editedImage];
     } else {
@@ -128,9 +126,6 @@
     }
 }
 
-
-
-
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     
@@ -144,15 +139,5 @@
     
     return newImage;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
