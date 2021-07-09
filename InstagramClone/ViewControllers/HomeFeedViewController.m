@@ -55,7 +55,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     Post *post = self.posts[indexPath.row];
     cell.post = post;
     return cell;
@@ -70,6 +70,7 @@
             self.posts = posts;
             [self.tableView reloadData];
         }
+        [self.refreshControl endRefreshing];
     }];
 }
 

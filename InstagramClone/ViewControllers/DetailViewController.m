@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet PFImageView *detailImageView;
 @property (weak, nonatomic) IBOutlet UILabel *detailCaptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailDateLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *detailProfileImageView;
 
 @end
 
@@ -21,6 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.detailProfileImageView.layer.cornerRadius = self.detailProfileImageView.frame.size.width/2;
+    if(self.post[@"author"][@"profilePicture"]) {
+        self.detailProfileImageView.file = self.post[@"author"][@"profilePicture"];
+        [self.detailProfileImageView loadInBackground];
+    } else {
+        NSLog(@"%@", self.post[@"author"][@"username"]);
+        UIImage *placeHolderImg = [UIImage imageNamed:@"image_placeholder"];
+        [self.detailProfileImageView setImage:placeHolderImg];
+    }
     self.detailAuthorLabel.text = self.post[@"author"][@"username"];
     self.detailCaptionLabel.text = self.post[@"caption"];
     self.detailImageView.file = self.post[@"image"];
@@ -31,14 +41,7 @@
     self.detailDateLabel.text = [NSString stringWithFormat:@"%@", [dateFormat stringFromDate:createdAt]];
 }
 
-//- (void)setPost:(Post *)post {
-//    _post = post;
-//    self.detailAuthorLabel.text = post[@"author"];
-//    self.detailCaptionLabel.text = post[@"caption"];
-//    self.detailDateLabel.text = post[@"createdAt"];
-//    self.detailImageView.file = post[@"image"];
-//    [self.detailImageView loadInBackground];
-//}
+
 
 /*
 #pragma mark - Navigation

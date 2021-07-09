@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet PFImageView *cellImage;
 @property (weak, nonatomic) IBOutlet UILabel *cellCaption;
 @property (weak, nonatomic) IBOutlet UILabel *cellUsername;
+@property (weak, nonatomic) IBOutlet PFImageView *cellProfilePicture;
 @property (strong, nonatomic) Post *post;
 
 @end
