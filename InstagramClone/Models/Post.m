@@ -49,5 +49,18 @@
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
++(void) getPostsFromDBWithCompletion: (void(^)(NSArray *posts, NSError *error))completion {
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post*> *_Nullable posts, NSError * _Nullable error) {
+        if(posts != nil) {
+            completion(posts,nil);
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
 
 @end

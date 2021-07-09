@@ -62,19 +62,28 @@
 }
 
 -(void)fetchPosts {
-    PFQuery *postQuery = [Post query];
-    [postQuery orderByDescending:@"createdAt"];
-    [postQuery includeKey:@"author"];
-    postQuery.limit = 20;
-    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post*> *_Nullable posts, NSError * _Nullable error) {
-        if(posts != nil) {
-            self.posts = posts;
-            [self.tableView reloadData];
-        } else {
+//    PFQuery *postQuery = [Post query];
+//    [postQuery orderByDescending:@"createdAt"];
+//    [postQuery includeKey:@"author"];
+//    postQuery.limit = 20;
+//    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post*> *_Nullable posts, NSError * _Nullable error) {
+//        if(posts != nil) {
+//            self.posts = posts;
+//            [self.tableView reloadData];
+//        } else {
+//            NSString *errorMsg = [NSString stringWithFormat:@"There was an error fetching posts: %@", error.localizedDescription];
+//            [[Alert new] showAlertWithMessage:errorMsg viewController:self];
+//        }
+//        [self.refreshControl endRefreshing];
+//    }];
+    [Post getPostsFromDBWithCompletion:^(NSArray * _Nonnull posts, NSError * _Nonnull error) {
+        if(error) {
             NSString *errorMsg = [NSString stringWithFormat:@"There was an error fetching posts: %@", error.localizedDescription];
             [[Alert new] showAlertWithMessage:errorMsg viewController:self];
+        } else {
+            self.posts = posts;
+            [self.tableView reloadData];
         }
-        [self.refreshControl endRefreshing];
     }];
 }
 
