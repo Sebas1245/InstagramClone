@@ -51,7 +51,7 @@
 }
 
 -(void)fetchPosts {
-    [Post getPostsFromDBWithCompletion:^(NSArray * _Nonnull posts, NSError * _Nonnull error) {
+    [Post getUserPostsFromDBwithCompletion:^(NSArray * _Nonnull posts, NSError * _Nonnull error) {
         if(error) {
             NSString *errorMsg = [NSString stringWithFormat:@"There was an error fetching posts: %@", error.localizedDescription];
             [[Alert new] showAlertWithMessage:errorMsg viewController:self];

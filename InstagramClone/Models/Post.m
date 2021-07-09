@@ -60,4 +60,18 @@
     }];
 }
 
++(void) getUserPostsFromDBwithCompletion: (void(^)(NSArray *posts, NSError *error))completion {
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    [postQuery whereKey:@"author" equalTo:[PFUser currentUser]];
+    postQuery.limit = 20;
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post*> *_Nullable posts, NSError * _Nullable error) {
+        if (posts != nil) {
+            completion(posts,nil);
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
 @end

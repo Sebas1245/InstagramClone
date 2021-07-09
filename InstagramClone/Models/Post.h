@@ -21,8 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *commentCount;
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
-+(void) getPostsFromDBWithCompletion: (void(^)(NSArray *posts, NSError *error))completion;
++(void)getPostsFromDBWithCompletion: (void(^)(NSArray *posts, NSError *error))completion;
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
++(void)getUserPostsFromDBwithCompletion: (void(^)(NSArray *posts, NSError *error))completion;
 @end
 
 NS_ASSUME_NONNULL_END
