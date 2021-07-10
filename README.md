@@ -2,13 +2,13 @@
 
 **Instagram Clone** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **14** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ X] User can sign up to create a new account using Parse authentication
+- [X] User can sign up to create a new account using Parse authentication
 - [X] User can log in and log out of his or her account
 - [X] The current signed in user is persisted across app restarts
 - [X] User can take a photo, add a caption, and post it to "Instagram"
@@ -33,18 +33,25 @@ The following **optional** features are implemented:
 - [ ] Style the feed to look like the real Instagram feed.
 - [ ] Implement a custom camera view.
 
+The following **additional** features are implemented:
+- [X] Error handling through iOS alerts. 
+
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How they went about implementing comments on the backend
+2. How they went about implementing a custom camera view
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![ ](./gif1.gif)
 
-GIF created with [Kap](https://getkap.co/).
+![ ](./gif2.gif)
+
+![ ](./gif3.gif)
+
+![ ](./gif4.gif)
 
 ## Credits
 
@@ -56,7 +63,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The main problem I had was learning to work with Parse and how to call data from the database. I had to use some time to focus on reading documentation to understand what was going on with the calls we were making to parse, especially when it came to how we were uploading the images. Speaking of images, the image picker was also something that I had to take a moment to read several times through the code to make sure I understood how that was working. 
 
 ## License
 
